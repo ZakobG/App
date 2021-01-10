@@ -1,0 +1,26 @@
+<head>
+  <script src="app-routing.module.ts"></script>
+  <script src="app.module.ts"></script>
+  <link rel="stylesheet" href="app.component.scss">
+  <script src="app.component.ts"></script>
+
+</head>
+<body>
+<div>
+  <ul id="navbar_list">
+    <li class="navbar_st"><a>||||</a></li>
+    <li><a routerLink="home" *ngIf="searchInput.includes('home')||searchInput===''">Home</a></li>
+    <li><a routerLink="blog" *ngIf="searchInput.includes('blog')||searchInput===''">Blog</a></li>
+    <li><a routerLink="about" *ngIf="searchInput.includes('about')||searchInput===''">About us</a></li>
+    <li><a routerLink="contact" *ngIf="searchInput.includes('contact')||searchInput===''">Contact us</a></li>
+    <li class="navbar_mid"><a>...</a></li>
+    <li class="navbar_search"><input [(ngModel)]="searchInput" placeholder="Search..." (focusout)="typeSearch()"><button (click)="typeSearch()">Go!</button></li>
+    <li class="navbar_en"><a>|</a></li>
+
+  </ul>
+</div>
+<div id="page_body">
+<router-outlet></router-outlet>
+</div>
+</body>
+
